@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医学检验技术简历</title>
+
+   
+	<link rel="stylesheet" href="ddd.css">
+    <style>
+	
+
+        @font-face {
+        font-family: 'FontAwesome';
+        src: url('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');
+        src: url('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+            url('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+            url('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+            url('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+            url('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        }
+        .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: '微软雅黑','Microsoft YaHei';
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+		
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            
+            overflow: hidden;
+        }
+
+        .resume {
+            width: 210mm;
+            height: 297mm;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            background: white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 25px 25px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+		
+
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 120px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .photo-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .photo-placeholder:hover {
+            background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.3));
+        }
+
+        .photo-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .photo-input {
+            display: none;
+        }
+
+        .basic-info {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .job-title {
+            font-size: 18px;
+            color: #ecf0f1;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-icon {
+            width: 14px;
+            height: 14px;
+            fill: #ecf0f1;
+        }
+
+        .content {
+            padding: 25px 25px;
+            line-height: 1.4;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 15px 15px 5px 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 3px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateX(3px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+		.education-item2 {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 2px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .education-item2:hover {
+            transform: translateX(3px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .university {
+            font-size: 25px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .degree {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+            color: #4a4a4a;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .experience-list li::before {
+            content: '▶';
+            position: absolute;
+            position: absolute; 
+			top: 3px;      
+			left: 0px;    
+            color: #3498db;
+            font-size: 12px;
+        }
+		
+		.experience-list3 {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list3 li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+            color: #4a4a4a;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .experience-list3 li::before {
+            content: '●';
+            position: absolute;
+            position: absolute; 
+			top: -2px;      
+			left: -5px;  
+            color: #5dade2;
+            font-size: 16px;
+        }
+		
+		.experience-list2 {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list2 li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            color: #000000;
+            font-size: 13px;
+            line-height: 1.3;
+        }
+
+        .experience-list2 li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-list li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 4px;
+            color: #34495e;
+            font-size: 12px;
+            line-height: 1.3;
+        }
+
+        .skill-list li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 8px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* VIP风格样式 */
+        .vip-section {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .vip-section:hover {
+            transform: translateX(3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            height: 3px;
+        }
+
+        .vip-header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .vip-badge {
+			position: relative;
+			background: linear-gradient(135deg, #2a2a2a, #1f1f1f, #2a2a2a);
+			border-radius: 15px;
+			padding: 1px;
+			box-shadow: 
+				0 0 8px rgba(212, 175, 55, 0.8),
+				0 0 15px rgba(212, 175, 55, 0.7),
+				0 0 25px rgba(255, 215, 0, 0.6),
+				0 0 35px rgba(212, 175, 55, 0.5),
+				0 0 42px rgba(255, 255, 255, 0.3),
+				0 0 50px rgba(212, 175, 55, 0.25),
+				inset 0 0 8px rgba(212, 175, 55, 0.3),
+				inset 0 0 15px rgba(255, 215, 0, 0.2),
+				inset 0 0 25px rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(212, 175, 55, 0.9);
+		}
+        .vip-badge-inner {
+            background: #1a1a1a;
+            border-radius: 19px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .vip-title {
+			font-size: 22px;
+			color: #E6C87D; /* 更沉稳的金白色，不刺眼 */
+			font-weight: bold;
+			filter: drop-shadow(0 0 5px rgba(230, 200, 125, 0.35));
+			text-shadow: 0 0 7px rgba(230, 200, 125, 0.3);
+		}
+
+        .vip-content {
+            padding: 15px;
+            color: #e0e0e0;
+			
+        }
+
+        .vip-skill-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .vip-skill-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #D4AF37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .vip-skill-icon i {
+            color: #1a1a1a;
+            font-size: 10px;
+        }
+
+        .vip-skill-text {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.4;
+            
+            /* filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.1));
+            text-shadow: 
+                0 0 5px rgba(212, 175, 55, 0.5),
+                0 0 8px rgba(255, 215, 0, 0.3); */
+        }
+
+        .vip-note {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        .vip-note-title {
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vip-note-content {
+            color: #c0c0c0;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .vip-note-content u {
+            color: #D4AF37;
+        }
+		.fa-diamond {
+			color: #D4AF37 !important;
+			filter: 
+				drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)) 
+				drop-shadow(0 0 12px rgba(255, 215, 0, 0.3));
+			text-shadow: 
+				0 0 6px rgba(212, 175, 55, 0.5),
+				0 0 10px rgba(255, 215, 0, 0.3);
+		}
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .controls {
+                display: none;
+            }
+        }
+
+        /* 确保内容不超出页面 */
+        .content-wrapper {
+            height: calc(297mm - 170px); /* 减去header高度 */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 压缩间距以适应一页 */
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section:nth-child(2) .experience-list li {
+            margin-bottom: 4px;
+        }
+		.section:nth-child(2) .experience-list2 li {
+            margin-bottom: 4px;
+        }
+		.section:nth-child(2) .experience-list3 li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="resww">
+        <div class="resume" id="resume">
+            <div class="header">
+                <div class="header-content">
+                    <div class="photo-container">
+                        <div class="photo-placeholder" id="photoPlaceholder">
+                            <img src="a.jpg" class="photo-preview" alt="默认图片">
+                        </div>
+                        <input type="file" id="photoInput" class="photo-input" accept="image/*">
+                    </div>
+                    <div class="basic-info">
+                        <div class="name">姓名：叶明志</div>
+                        <div class="job-title">医学检验技术专业 | 全日制本科 | 山西医科大学</div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <span>男 | 福建省漳州市</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <span>18950039186</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                <span>求职：医学检验相关工作</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                                </svg>
+                                <span>毕业学校和时间：山西医科大学，2025.6.28</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="content-wrapper">
+                    <!-- <div class="section">
+                        <h2 class="section-title">教育背景</h2>
+                        <div class="education-item2">
+                            <div class="education-header">
+                                <div class="university">山西医科大学</div>
+                                <div class="university">本科    ●    医学检验技术 ● 应届毕业生</div>
+                            </div>
+                            
+                        </div>
+                    </div> -->
+					
+					<div class="section">
+                        <h2 class="section-title">实习经历</h2>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <div class="university">山西省肿瘤医院 ———— 三甲</div>
+                            </div>
+                            <ul class="experience-list">
+                                <li>拥有《健康管理师》职业技能证书（三级/高级）</li>
+                                <li>完成轮岗实习，掌握临检、生化、微生物、免疫等实验室基础操作</li>
+                                <li>独立完成细菌培养与药敏试验，协助建立耐药菌数据库，并参与实LIS系统的日常数据录入与核对</li>
+                                <li>协助完成血常规、尿常规、粪便隐血实验、快速血糖检测、肿瘤标志物检测等基础项目操作，日均处理样本100+份</li>
+                                <li>独立完成红细胞沉降率的检测，血流变的检测工作，并协助审核</li>
+                                <li>协助完成贝克曼仪器检测乙肝，丙肝，艾滋，梅毒四项项目操作。曾在生物安全柜中独立完成检测梅毒等工作</li>
+                                <span>================================================<br></span>
+                                <li><b>空窗期经历：重点打造了短视频业务。目前已跑通全流程，该副业的工作流成熟且时间灵活，绝不影响入职后的本职工作。旨在为未来检验主业提供稳定的经济支撑，确保职业发展的纯粹性。</b></li>
+								<span>个人兴趣爱好：音乐制作、编曲、混音、扒带<br></span>
+                                <span>自我评价： 能适应高强度、多任务的工作环境，可塑性强 || 参加过多项学校组织的志愿者服务，下三乡活动，具有奉献精神</span>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section">
+					    
+                        <div class="vip-section">
+                            <div class="gold-gradient"></div>
+                            
+                            <div class="vip-content">
+                                <div class="vip-header">
+                                    <div class="vip-badge">
+                                        <div class="vip-badge-inner">
+                                            <i class="fa fa-diamond" style="color: #D4AF37; font-size: 25px;"></i>
+                                            <span class="vip-title" style="font-size: 25px;">计算机----个人优势</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- <div class="vip-skill-item">
+                                    <div class="vip-skill-icon">
+                                        <i class="fa fa-certificate"></i>
+                                    </div>
+                                    <div class="vip-skill-text">持有全国计算机技术与软件专业技术资格(水平)考试初级程序员证书，国家信息安全水平考试证书</div>
+                                </div> -->
+                                
+                                <div class="vip-skill-item">
+                                    <div class="vip-skill-icon">
+                                        <i class="fa fa-table"></i>
+                                    </div>
+                                    <div class="vip-skill-text">全国计算机技术与软件专业技术资格(水平)考试《初级程序员证书》应用技术考试合格，理论知识仅差4分。(仅仅考过一次)</div>
+                                </div>
+                                
+                                <div class="vip-skill-item">
+                                    <div class="vip-skill-icon">
+                                        <i class="fa fa-code"></i>
+                                    </div>
+                                    <div class="vip-skill-text">熟悉JAVA开发，已开发大型Minecrafr(我的世界)JAVA模组，实现Blender专业3D建模软件与MC互通，在短视频平台收获大量粉丝。如医院有JAVA环境，可快速开发简单桌面化程序，如需中大型软件会使用Electron</div>
+                                </div>
+                                
+                                <div class="vip-skill-item">
+                                    <div class="vip-skill-icon">
+                                        <i class="fa fa-desktop"></i>
+                                    </div>
+                                    <div class="vip-skill-text">熟练使用AI定制前端UI界面以及生成并修改后端代码，熟悉Electron跨平台开发。</div>
+                                </div>
+
+                                <div class="vip-skill-item">
+                                    <div class="vip-skill-icon">
+                                        <i class="fa fa-desktop"></i>
+                                    </div>
+                                    <div class="vip-skill-text">因医院电脑配置普遍偏低，若 Electron 运行吃力，我可切换为更轻量的 Tauri（腾讯元宝同款）或 WPF 开发，保证兼容性与流畅度。</div>
+                                </div>
+                                
+                                <div class="vip-note">
+                                    
+                                    <div class="vip-note-content">
+                                        因为求职的是医学检验工作，此处不再过多赘述，以免喧宾夺主，个人完整履历会在后续更新
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gold-gradient"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="downloadResume()">下载简历 (PNG)</button>
+        <button class="btn" onclick="printResume()">打印简历</button>
+    </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    
+    <script>
+        // 照片上传功能
+        // const photoInput = document.getElementById('photoInput');
+        // const photoPlaceholder = document.getElementById('photoPlaceholder');
+
+        // photoPlaceholder.addEventListener('click', () => {
+        //     photoInput.click();
+        // });
+
+        // photoInput.addEventListener('change', (e) => {
+        //     const file = e.target.files[0];
+        //     if (file) {
+        //         const reader = new FileReader();
+        //         reader.onload = (e) => {
+        //             const img = document.createElement('img');
+        //             img.src = e.target.result;
+        //             img.className = 'photo-preview';
+        //             img.onclick = () => photoInput.click();
+        //             photoPlaceholder.innerHTML = '';
+        //             photoPlaceholder.appendChild(img);
+          //      };
+          //      reader.readAsDataURL(file);
+         //   }
+       // });
+		
+		
+
+        // 下载简历为PNG
+        // async function downloadResume() {
+			
+		// 	try {
+		// 		  const resume = document.getElementById('resume');
+		// 		  if (!resume) throw new Error('未找到简历元素');
+
+				  
+		// 		  const rect = resume.getBoundingClientRect();
+		// 		  const scaleFactor = 1; // 提高缩放比例增强清晰度
+
+		// 		  const scale_=2;
+		// 		  // 使用 dom-to-image 替代 html2canvas
+		// 		  const blob = await domtoimage.toBlob(resume, {
+		// 			quality: 1.0, // 设置最高质量
+		// 			width: 794*scale_, // A4宽度 (210mm * 3.78 pixels/mm)
+		// 			height: 1123*scale_, // A4高度 (297mm * 3.78 pixels/mm)
+		// 			style: {
+		// 			  transform: `scale(${scale_})`,
+		// 			  transformOrigin: 'top left',
+		// 			  width: `${794*scale_}px`,
+		// 			  height: `${1123*scale_}px`,
+		// 			  backgroundColor: '#ffffff'
+		// 			},
+		// 			cacheBust: true // 防止缓存问题
+		// 		  });
+
+		// 		  if (!blob) throw new Error('无法创建图片Blob');
+
+		// 		  const link = document.createElement('a');
+		// 		  link.download = '医学检验技术简历_叶xx.png';
+		// 		  link.href = URL.createObjectURL(blob);
+
+		// 		  document.body.appendChild(link);
+		// 		  link.click();
+
+		// 		  // 清理资源
+		// 		  setTimeout(() => {
+		// 			document.body.removeChild(link);
+		// 			URL.revokeObjectURL(link.href);
+		// 		  }, 100);
+		// 		} catch (error) {
+		// 		  console.error('简历导出失败:', error);
+		// 		  alert('导出简历时出错，请重试');
+		// 		}
+			
+		// }
+
+        // // 打印简历
+        // function printResume() {
+        //     window.print();
+        // }
+
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 添加一些交互效果
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
